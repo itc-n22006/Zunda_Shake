@@ -1,0 +1,173 @@
+/* スタートページのスタイル */
+.start-page {
+  text-align: center;
+  padding: 250px;
+  /* background-image: url('../images/waku.jpg'); */
+  background-size: contain;
+  color: rgb(14, 8, 8);
+  position: relative;
+}
+
+.start-page h1 {
+  font-size: 45px;
+  margin-bottom: 25px;
+  color: blue;
+}
+
+.start-page p {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.start-page p span {
+  color: rgb(236, 38, 38); /* 追加された部分: 問題の答えの文字の色を赤に設定 */
+}
+
+.start-page button {
+  font-size: 24px;
+  padding: 10px 20px;
+  font-family: 'Bitter', serif;
+}
+
+
+
+.notepc-image {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  width: 300px;
+  height: auto;
+}
+
+.bijinesuman-image {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  width: 300px;
+  height: auto;
+}
+
+.inusyashin-image {
+  position: absolute;
+  top: 0;
+  right: 120px;
+  width: 200px; /* 任意の幅 */
+  height: auto; /* 高さを自動調整 */
+}
+
+.kaeru01-image {
+  position: absolute;
+  top: 0;
+  left: 120px;
+  width: 200px; /* 任意の幅 */
+  height: auto; /* 高さを自動調整 */
+}
+
+
+/* インデックスページのスタイル */
+#index {
+  background: none;
+  border: 10px solid transparent;
+  border-image: url('../images/waku.jpg') round;
+  background-attachment: fixed;
+  block-size: cover;
+  position: relative;
+}
+
+/* クイズコンテナ全体のスタイル */
+.quiz-container {
+  text-align: center;
+  display: none;
+  background-color: #8eec63;
+  color: #f7f7f7;
+  position: relative;
+  z-index: 2;
+}
+
+/* 問題と答えのテキストのフォントサイズを調整 */
+.question p {
+  font-size: 80px;
+}
+
+.answer p {
+  font-size: 50px;
+}
+
+/* カウントダウンテキストのフォントサイズを調整 */
+.countdown p {
+  font-size: 80px;
+}
+
+/* 最後のページ（お疲れ様ページ）のスタイル */
+.end-page {
+  text-align: center;
+  padding: 50px;
+  /* background-image: url('../images/hanabi5.jpg'), url('../images/hanabi6.jpg'); /* 複数の画像を追加 
+  background-size: contain, contain; /* 各画像をcontainに変更 
+  background-repeat: no-repeat, no-repeat; /* 各画像の繰り返しを防ぐ
+  background-position: right center, left center; 各画像を右側と左側に配置 */
+  color: black;
+  background-color: #dcf98d;
+}
+
+.end-page p {
+  font-size: 30px;
+  margin-bottom:10px;
+}
+
+#end-button {
+  margin-top: 20px; /* ボタンの上部マージンを追加 */
+  margin-right: 100px; /* 終了ボタンと花火画像の間隔を追加 */
+  font-size: 16px; /* 必要に応じてフォントサイズを調整 */
+}
+
+#show-score-button {
+  margin-top: 0px; /* ボタンの上部マージンを追加 */
+  font-size: 16px; /* 必要に応じてフォントサイズを調整 */
+}
+
+.poyon-animation {
+  animation: poyon 1s ease infinite alternate;
+}
+
+
+/* 復習時の答えの文字色 */
+.review-answer p {
+  color: red; /* 例: 赤色 */
+}
+
+@keyframes poyon {
+  0% {
+      transform: translateY(0);
+  }
+  100% {
+      transform: translateY(-20px);
+  }
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 600px) {
+  .start-page {
+    padding: 50px;
+  }
+
+  .start-page h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .start-page p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .start-page button {
+    font-size: 18px;
+  }
+
+  .notepc-image {
+    width: 150px;
+    bottom: 20px;
+    right: 20px;
+  }
+}

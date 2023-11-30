@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Quiz App</title>
+</head>
+<body>
+<!-- スタートページ -->
+<div class="start-page">
+    <h1>ITクイズへようこそ!</h1>
+    <p>このサイトはIT企業に入社する前のユーザー向けに作ったものです<br>
+       <span>3秒間のカウントダウンの間に問題の答えを思い浮かべてください</span><br><br>
+       <span>わからない問題</span>があった場合は左下にあるチェックボックスに<span>チェック</span>を入れてください✅<br>
+       最後に復習することができます</p>
+    
+    <button id="start-button">Start Quiz</button>
+    <img src="../images/notepc.gif" alt="Notepc Image" class="notepc-image">
+    <img src="../images/bijinesuman.png" alt="Bijinesuman Image" class="bijinesuman-image">
+    <img src="../images/inusyashin.png" alt="Inusyashin Image" class="inusyashin-image">
+    <img src="../images/kaeru01.png" alt="Kaeru01 Image" class="kaeru01-image">
+</div>
+
+<!-- クイズコンテナ -->
+<div class="quiz-container">
+    <!-- 問題と答えの要素 -->
+    <div class="question" id="question1" style="display: none;">
+        <p>DNSを略さずに言うと</p>
+    </div>
+    <div class="answer" id="answer1" style="display: none;">
+        <p>Domain Name System</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: DNSを略さずに言うと" data-answer="答え: Domain Name System">
+    </div>
+
+    <div class="question" id="question2" style="display: none;">
+        <p>umaskとは</p>
+    </div>
+    <div class="answer" id="answer2" style="display: none;">
+        <p>新規に作成されるファイルやディレクトリのアクセス権限を指定するコマンド</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: umaskとは" data-answer="答え: 新規に作成されるファイルやディレクトリのアクセス権限を指定するものコマンド">
+    </div>
+
+    <div class="question" id="question3" style="display: none;">
+        <p>HTMLを略さずに言うと</p>
+    </div>
+    <div class="answer" id="answer3" style="display: none;">
+        <p>HyperText Markup Language</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: HTMLを略さずに言うと" data-answer="答え: HyperText Markup Language">
+    </div>
+        
+    <div class="question" id="question4" style="display: none;">
+        <p>アーカイブとは</p>
+    </div>
+    <div class="answer" id="answer4" style="display: none;">
+        <p>専用の保存領域に安全にデータを保存すること</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: アーカイブとは" data-answer="答え: 専用の保存領域に安全にデータを保存すること">
+    </div>
+
+    <div class="question" id="question5" style="display: none;">
+        <p>クエリ(Query)とは</p>
+    </div>
+    <div class="answer" id="answer5" style="display: none;">
+        <p>ソフトウェアに対するデータの問い合わせや要求などを意味する</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: クエリ(Query)とは" data-answer="答え: ソフトウェアに対するデータの問い合わせや要求などを意味する">
+    </div>
+
+    <div class="question" id="question6" style="display: none;">
+        <p>インデントとは</p>
+    </div>
+    <div class="answer" id="answer6" style="display: none;">
+        <p>文章の行頭に空白を挿入して先頭の文字を右に押しやること</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: インデントとは" data-answer="答え: 文章の行頭に空白を挿入して先頭の文字を右に押しやること">
+    </div>
+
+    <div class="question" id="question7" style="display: none;">
+        <p>DNSサーバの役割は</p>
+    </div>
+    <div class="answer" id="answer7" style="display: none;">
+        <p>IPアドレスとドメイン名の紐付けを管理したり、IPアドレスとドメイン名の変換をやってくれるコンピュータのこと</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: DNSサーバの役割は" data-answer="答え: IPアドレスとドメイン名の紐付けを管理したり、IPアドレスとドメイン名の変換をやってくれるコンピュータのこと">
+    </div>
+
+    <div class="question" id="question8" style="display: none;">
+        <p>chmod と chown の違いは</p>
+    </div>
+    <div class="answer" id="answer8" style="display: none;">
+        <p>chmodは誰が何を出来るかを定義し、chownはファイルの所有者を変更するために使用される</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: chmod と chown の違いは" data-answer="答え: chmodは誰が何を出来るかを定義し、chownはファイルの所有者を変更するために使用される">
+    </div>
+
+    <div class="question" id="question9" style="display: none;">
+        <p>アーキテクチャ(architecture)とは</p>
+    </div>
+    <div class="answer" id="answer9" style="display: none;">
+        <p>抽象的あるいは基本的な構造や設計、動作原理、実現方式などを表す</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: アーキテクチャ(architecture)とは" data-answer="答え: 抽象的あるいは基本的な構造や設計、動作原理、実現方式などを表す">
+    </div>
+    
+    <div class="question" id="question10" style="display: none;">
+        <p>メモリとストレージの違いは</p>
+    </div>
+    <div class="answer" id="answer10" style="display: none;">
+        <p>メモリはデータなどの一時的な保管場所であるが、ストレージはアプリケーションやデータを永久的に保管しておく場所</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: メモリとストレージの違いは" data-answer="答え: メモリはデータなどの一時的な保管場所であるが、ストレージはアプリケーションやデータを永久的に保管しておく場所">
+    </div>
+
+    <div class="question" id="question11" style="display: none;">
+        <p>イーサネットとは</p>
+    </div>
+    <div class="answer" id="answer11" style="display: none;">
+        <p>パソコンやゲーム機といったデバイスに、ケーブルを使ってインターネット接続する通信規格のひとつ</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: イーサネットとは" data-answer="答え: パソコンやゲーム機といったデバイスに、ケーブルを使ってインターネット接続する通信規格のひとつ">
+    </div>
+
+    <div class="question" id="question12" style="display: none;">
+        <p>デーモンとは</p>
+    </div>
+    <div class="answer" id="answer12" style="display: none;">
+        <p>UNIX系のOSなどにおける常駐プログラムの呼び名</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: デーモンとは" data-answer="答え: UNIX系のOSなどにおける常駐プログラムの呼び名">
+    </div>
+
+    <div class="question" id="question13" style="display: none;">
+        <p>SSLとは</p>
+    </div>
+    <div class="answer" id="answer13" style="display: none;">
+        <p>2台のサーバー間で送信されるデータを暗号化することによりインターネット接続を保護する標準的なテクノロジー、Secure Sockets Layer</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: SSLとは" data-answer="答え: 2台のサーバー間で送信されるデータを暗号化することによりインターネット接続を保護する標準的なテクノロジー、Secure Sockets Layer">
+    </div>
+
+    <div class="question" id="question14" style="display: none;">
+        <p>クラウドサーバとは</p>
+    </div>
+    <div class="answer" id="answer14" style="display: none;">
+        <p>ネットワーク経由で使う形態になっているサーバ、あるいは仮想サーバのこと</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: クラウドサーバとは" data-answer="答え: ネットワーク経由で使う形態になっているサーバ、あるいは仮想サーバのこと">
+    </div>
+
+    <div class="question" id="question15" style="display: none;">
+        <p>SQLとは</p>
+    </div>
+    <div class="answer" id="answer15" style="display: none;">
+        <p>データベース作成と操作のための標準言語、Structured Query Language</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: SQLとは" data-answer="答え: データベース作成と操作のための標準言語、Structured Query Language">
+    </div>
+
+    <div class="question" id="question16" style="display: none;">
+        <p>APIとはどんなものか</p>
+    </div>
+    <div class="answer" id="answer16" style="display: none;">
+        <p>データなどを、他のプログラムから呼び出して利用するための手順やデータ形式などを定めた規約のこと、Application Programming Interface</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: APIとはどんなものか" data-answer="答え: データなどを、他のプログラムから呼び出して利用するための手順やデータ形式などを定めた規約のこと、Application Programming Interface">
+    </div>
+
+    <div class="question" id="question17" style="display: none;">
+        <p>KVMを略さずに言うと</p>
+    </div>
+    <div class="answer" id="answer17" style="display: none;">
+        <p>Kernel-based Virtual Machine  仮想マシンを作成できるソフトウェア機能</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: KVMを略さずに言うと" data-answer="答え: Kernel-based Virtual Machine  仮想マシンを作成できるソフトウェア機能">
+    </div>
+
+    <div class="question" id="question18" style="display: none;">
+        <p>スキーマ(schema)とは</p>
+    </div>
+    <div class="answer" id="answer18" style="display: none;">
+        <p>何かの「構造」を指す用語</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: スキーマ(schema)とは" data-answer="答え: 何かの「構造」を指す用語">
+    </div>
+
+    <div class="question" id="question19" style="display: none;">
+        <p>プロパティ(property)とは</p>
+    </div>
+    <div class="answer" id="answer19" style="display: none;">
+        <p>対象の持つ設定や状態、属性のこと</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: プロパティ(property)とは" data-answer="答え: 対象の持つ設定や状態、属性のこと">
+    </div>
+
+    <div class="question" id="question20" style="display: none;">
+        <p>Nullとは</p>
+    </div>
+    <div class="answer" id="answer20" style="display: none;">
+        <p>なんのデータも含まれない状態のこと</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: Nullとは" data-answer="答え: なんのデータも含まれない状態のこと">
+    </div>
+
+    <div class="question" id="question21" style="display: none;">
+        <p>Sambaとは</p>
+    </div>
+    <div class="answer" id="answer21" style="display: none;">
+        <p>Windowsネットワークの諸機能をWindows以外のシステムで利用できるようにするソフトウェア</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: Sambaとは" data-answer="答え: Windowsネットワークの諸機能をWindows以外のシステムで利用できるようにするソフトウェア">
+    </div>
+
+    <div class="question" id="question22" style="display: none;">
+        <p>NFSを略さずに言うと</p>
+    </div>
+    <div class="answer" id="answer22" style="display: none;">
+        <p>Network File System</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: NFSを略さずに言うと" data-answer="答え: Network File System">
+    </div>
+
+    <div class="question" id="question23" style="display: none;">
+        <p>サブネットマスクとは</p>
+    </div>
+    <div class="answer" id="answer23" style="display: none;">
+        <p>IPアドレスのうち、ネットワークアドレスとホストアドレスを識別するための数値</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: サブネットマスクとは" data-answer="答え: IPアドレスのうち、ネットワークアドレスとホストアドレスを識別するための数値">
+    </div>
+
+    <div class="question" id="question24" style="display: none;">
+        <p>パーミッション設定とは</p>
+    </div>
+    <div class="answer" id="answer24" style="display: none;">
+        <p>「書き込み」「読み取り」「実行」の制限設定を行うこと</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: パーミッション設定とは" data-answer="答え: 「書き込み」「読み取り」「実行」の制限設定を行うこと">
+    </div>
+
+    <div class="question" id="question25" style="display: none;">
+        <p>アーカイブとは</p>
+    </div>
+    <div class="answer" id="answer25" style="display: none;">
+        <p>専用の保存領域に安全にデータを保存すること</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: アーカイブとは" data-answer="答え: 専用の保存領域に安全にデータを保存すること">
+    </div>
+
+    <div class="question" id="question26" style="display: none;">
+        <p>ハイパーバイザとは</p>
+    </div>
+    <div class="answer" id="answer26" style="display: none;">
+        <p>バーチャルマシンを実行するための仮想化技術のこと、仮想化ソフトとほぼ同義</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: ハイパーバイザとは" data-answer="答え: バーチャルマシンを実行するための仮想化技術のこと、仮想化ソフトとほぼ同義">
+    </div>
+
+    <div class="question" id="question27" style="display: none;">
+        <p>BPOを略さずに言うと</p>
+    </div>
+    <div class="answer" id="answer27" style="display: none;">
+        <p>Business Process Outsourcing(アウトソーシング)</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: BPOを略さずに言うと" data-answer="答え: Business Process Outsourcing(アウトソーシング)">
+    </div>
+
+    <div class="question" id="question28" style="display: none;">
+        <p>Kernelとは</p>
+    </div>
+    <div class="answer" id="answer28" style="display: none;">
+        <p>Linuxの中核部分、ハードウェアとソフトウェアの連携担当</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: Kernelとは" data-answer="答え: Linuxの中核部分、ハードウェアとソフトウェアの連携担当">
+    </div>
+
+    <div class="question" id="question29" style="display: none;">
+        <p>BIOSを略さずに言うと</p>
+    </div>
+    <div class="answer" id="answer29" style="display: none;">
+        <p>Basic Input Output System</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: BIOSを略さずに言うと" data-answer="答え: Basic Input Output System">
+    </div>
+
+    <div class="question" id="question30" style="display: none;">
+        <p>RAMを略さずに言うと</p>
+    </div>
+    <div class="answer" id="answer30" style="display: none;">
+        <p>Random Access Memory</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: RAMを略さずに言うと" data-answer="答え: Random Access Memory">
+    </div>
+
+    <div class="question" id="question31" style="display: none;">
+        <p>CPUとはどんなもの</p>
+    </div>
+    <div class="answer" id="answer31" style="display: none;">
+        <p>コンピュータの頭脳で、計算とデータ処理を担当(Central Processing Unit)</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: CPUとはどんなもの" data-answer="答え: コンピュータの頭脳で、計算とデータ処理を担当(Central Processing Unit)">
+    </div>
+
+    <div class="question" id="question32" style="display: none;">
+        <p>プロトコル(Protocol)とは</p>
+    </div>
+    <div class="answer" id="answer32" style="display: none;">
+        <p>コンピュータやデバイス間の通信規則</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: プロトコル(Protocol)とは" data-answer="答え: コンピュータやデバイス間の通信規則">
+    </div>
+
+    <div class="question" id="question33" style="display: none;">
+        <p>PHPの正式名称は</p>
+    </div>
+    <div class="answer" id="answer33" style="display: none;">
+        <p>Hypertext Preprocessor(Web系のプログラムを作るときによく使われるプログラム言語)</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: PHPの正式名称は" data-answer="答え: Hypertext Preprocessor(Web系のプログラムを作るときによく使われるプログラム言語)">
+    </div>
+
+    <div class="question" id="question34" style="display: none;">
+        <p>NATを略さずに言うと</p>
+    </div>
+    <div class="answer" id="answer34" style="display: none;">
+        <p>Network Address Translation, 全世界で通用するIPアドレス(グローバルIPアドレス)と仲間内でのみ通用するIPアドレス(プライベートIPアドレス)を紐付けて変換する技術</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: NATを略さずに言うと" data-answer="答え: Network Address Translation, 全世界で通用するIPアドレス(グローバルIPアドレス)と仲間内でのみ通用するIPアドレス(プライベートIPアドレス)を紐付けて変換する技術">
+    </div>
+
+    <div class="question" id="question35" style="display: none;">
+        <p>ハッシュ値とは</p>
+    </div>
+    <div class="answer" id="answer35" style="display: none;">
+        <p>入力に対応する適当な値</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: ハッシュ値とは" data-answer="答え: 入力に対応する適当な値">
+    </div>
+
+    <div class="question" id="question36" style="display: none;">
+        <p>アパッチ(Apache)とは</p>
+    </div>
+    <div class="answer" id="answer36" style="display: none;">
+        <p>世界的に使用される著名なWebサーバソフトの1つ</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: アパッチ(Apache)とは" data-answer="答え: 世界的に使用される著名なWebサーバソフトの1つ">
+    </div>
+
+    <div class="question" id="question37" style="display: none;">
+        <p>パラメータ(parameter)とは</p>
+    </div>
+    <div class="answer" id="answer37" style="display: none;">
+        <p>システムに影響を与える、外から入ってくる値</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: パラメータ(parameter)とは" data-answer="答え: システムに影響を与える、外から入ってくる値">
+    </div>
+
+    <div class="question" id="question38" style="display: none;">
+        <p>FQDNとは</p>
+    </div>
+    <div class="answer" id="answer38" style="display: none;">
+        <p>DNSなどのホスト名、ドメイン名などすべてを省略せずに指定した記述形式のこと、Fully Qualified Domain Name</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: FQDN を略さずに言うと" data-answer="答え: DNSなどのホスト名、ドメイン名などすべてを省略せずに指定した記述形式のこと、Fully Qualified Domain Name">
+    </div>
+
+    <div class="question" id="question39" style="display: none;">
+        <p>ビルドとは</p>
+    </div>
+    <div class="answer" id="answer39" style="display: none;">
+        <p>プログラムのソースコードをあれやこれやして実際のプログラムを作る作業のこと</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: ビルドとは" data-answer="答え: プログラムのソースコードをあれやこれやして実際のプログラムを作る作業のこと">
+    </div>
+
+    <div class="question" id="question40" style="display: none;">
+        <p>デプロイとは</p>
+    </div>
+    <div class="answer" id="answer40" style="display: none;">
+        <p>作ったプログラムをしかるべき場所においたり、あれやこれやの設定をしたりして、使える状態にすること</p>
+        <input type="checkbox" class="review-checkbox" data-question="問題: デプロイとは" data-answer="答え: 作ったプログラムをしかるべき場所においたり、あれやこれやの設定をしたりして、使える状態にすること">
+    </div>
+
+    <!-- 他の問題と答えも同様に追加 -->
+
+    <div class="countdown">
+        <p><span id="countdown">1</span></p>
+    </div>
+    <button id="next-button" style="display: none;">次へ</button>
+</div>
+
+<!-- 最後のページ（お疲れ様ページ） -->
+<div class="end-page" style="display: none;">
+    <p style="font-size: 50px;">お疲れ様です!😊</p>
+    <a href="#" id="review-link" style="font-size: 40px;">復習する</a>
+    <div id="review-questions" style="font-size: 16px;"></div>
+    <button id="end-button" style="font-size: 30px; display: none;">終了</button>
+    <button id="show-score-button" style="font-size: 30px;">スコア表示</button> <!-- 追加 -->
+    
+</div>
+    <script src="script.js"></script>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
